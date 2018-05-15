@@ -1,0 +1,435 @@
+%% Modelo do Programa de Pós Graduação em Tecnologias Sustentáveis
+%% baseado no abtex2-modelo-trabalho-academico.tex, v-1.9.6 laurocesar
+%% Carlos Guilherme Souza Koehler
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+% ------------------------------------------------------------------------
+
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% twoside para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{ppgtecs-ifes-abntex2}
+	
+% ---
+% Pacotes básicos 
+% ---
+	
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o ``título'':
+%
+% Em maiúscula apenas a primeira letra da sentença (do título), exceto 
+% nomes próprios, geográficos, institucionais ou Programas ou Projetos ou 
+% siglas, os quais podem ter letras em maiúscula também.
+%
+% O subtítulo do trabalho é opcional.
+% Sem ponto final.
+%
+% Atenção: o título da Dissertação na versão corrigida não pode mudar. 
+% Ele deve ser idêntico ao da versão original.
+%
+%-------------------------------------------------------------------------
+\titulo{TÍTULO DO TRABALHO}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o ``autor'':
+%
+% Todas as letras em maiúsculas.
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\autor{AUTOR DO TRABALHO}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o ``local'':
+%
+% Não incluir o ``estado''.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\local{Vitória}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre a ``data'':
+%
+% Colocar o ano do depósito (ou seja, o ano da entrega) da respectiva 
+% versão, seja ela a versão original (para a defesa) seja ela a versão 
+% corrigida (depois da aprovação na defesa). 
+%
+% Atenção: Se a versão original for depositada no final do ano e a versão 
+% corrigida for entregue no ano seguinte, o ano precisa ser atualizado no 
+% caso da versão corrigida. 
+% Cuidado, pois o ano da ``capa externa'' também precisa ser atualizado 
+% nesse caso.
+%
+% Não incluir o dia, nem o mês.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\data{2018}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o ``Orientador'':
+%
+% Se for uma professora, trocar por ``Profa. Dra.''
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\orientador{Prof. Dr. Fulano de Tal}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPFGTECS- Informações sobre o ``Coorientador'':
+%
+% Opcional. Incluir apenas se houver co-orientador formal, de acordo com o 
+% Regulamento do Programa.
+%
+% Se for uma professora, trocar por ``Profa. Dra.''
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\coorientador{Prof. Dr. Fulano de Tal}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o ``instituicao'':
+%
+% Não mexer. Deixar exatamente como está.
+%
+%-------------------------------------------------------------------------
+\instituicao{
+	INSTITUTO FEDERAL DO ESPÍRITO SANTO
+	\par
+	MESTRADO PROFISSIONAL EM TECNOLOGIAS SUSTENTÁVEIS}
+\tipotrabalho{Dissertação (Mestrado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{
+	%-------------------------------------------------------------------------
+	% Comentário adicional do PPGTECS - Informações sobre o texto ``Versão 
+	% original'':
+	%
+	% Não usar para Qualificação.
+	%
+	%-------------------------------------------------------------------------
+%	Versão original \newline \newline \newline 
+	%-------------------------------------------------------------------------
+	% Comentário adicional do PPGTECS - Informações sobre o ``texto principal do
+	% preambulo'':
+	%
+	% Para Qualificação, trocar por: Texto de Exame de Qualificação apresentado ao Programa de Pós-Graduação em Tecnologias Sustentáveis do Instituto Federal do Espírito Santo. Como requisito para a obtenção do título de Mestre em Tecnologias Sustentáveis.
+	%
+	%-------------------------------------------------------------------------
+	Dissertação de mestrado apresentado ao Programa de Pós-Graduação em Tecnologias Sustentáveis do Instituto Federal do Espírito Santo. Como requisito para a obtenção do título de Mestre em Tecnologias Sustentáveis. 
+	%
+	\newline \newline Área de concentração: Interdisciplinar.
+	\newline \newline Linha de pesquisa: Otimização de Serviços, Sistemas e Processos.
+	\newline \newline Orientador: \imprimirorientador.
+	\newline Coorientador: \imprimircoorientador.
+%-------------------------------------------------------------------------
+% Comentário adicional do PPGTECS - Informações sobre o texto da ``Versão 
+% corrigida'':
+%
+% Não usar para Qualificação.
+% Não usar para versão original de Dissertação.
+% 
+% Substituir ``xx de xxxxxxxxxxxxxxx de xxxx'' pela ``data da defesa''.
+%
+%-------------------------------------------------------------------------
+%\newline \newline \newline Versão corrigida contendo as alterações solicitadas pela comissão julgadora em xx de xxxxxxxxxxxxxxx de xxxx.
+}
+% ---
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=black,          	% color of internal links
+	citecolor=black,        		% color of links to bibliography
+	filecolor=black,      		% color of file links
+	urlcolor=black,
+	bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+% ---
+
+% ---
+% Insere a ficha bibliográfica, para inserir a ficha em pdf comentar a primeira
+% linha e tirar o comentário da segunda.
+% ---
+\include{ficha-bibliografica}
+% \includepdf{ficha-bibliografica.pdf}
+% ---
+
+% ---
+% Insere a errata
+% ---
+\include{errata}
+% \includepdf{errata.pdf}
+% ---
+
+% ---
+% Insere a folha de aprovação, para inserir a folha de aprovação em pdf 
+% comentar a primeira linha e tirar o comentário da segunda.
+% ---
+\include{folha-aprovacao}
+% \includepdf{folha-aprovacao.pdf}
+% ---
+
+% ---
+% Insere a dedicatoria
+% ---
+\include{dedicatoria}
+% ---
+
+% ---
+% Insere os agradecimentos
+% ---
+\include{agradecimentos}
+% ---
+
+% ---
+% Insere o epígrafe
+% ---
+\include{epigrafe}
+% ---
+
+% ---
+% Insere os resumos
+% ---
+\include{resumos}
+% ---
+
+% ---
+% Insere as listas de ilustrações, tabelas, abreviaturas e símbolos.
+% ---
+\include{listas}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ---
+% Insere a introdução.
+% ---
+\include{introducao}
+% ---
+
+
+% ---
+% Capitulo de revisão de literatura
+% ---
+\chapter{Lorem ipsum dolor sit amet}
+\setlength\afterchapskip{\lineskip}
+% ---
+
+% ---
+\section{ALIQUAM VESTIBULUM FRINGILLA LOREM}
+% ---
+
+\lipsum[1]
+
+\lipsum[2-3]
+
+
+% ---
+% primeiro capitulo de Resultados
+% ---
+\chapter{Lectus lobortis condimentum}
+\setlength\afterchapskip{\lineskip}
+% ---
+
+% ---
+\section{VESTIBULUM ANTE IPSUM PRIMIS IN FAUCIBUS ORCI LUCTUS ET ULTRICES POSUERE CUBILIA CURAE}
+% ---
+
+\lipsum[21-22]
+
+% ---
+% segundo capitulo de Resultados
+% ---
+\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
+elementum}
+\setlength\afterchapskip{\lineskip}
+% ---
+
+% ---
+\section{PELLENTESQUE SIT AMET PEDE AC SEM ELEIFEND COSECTETUER}
+% ---
+
+\lipsum[24]
+
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+\phantompart
+
+% ---
+% Conclusão
+% ---
+\chapter{Conclusão}
+\setlength\afterchapskip{\lineskip}
+% ---
+
+\lipsum[31-33]
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{referencias}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}
